@@ -1,3 +1,11 @@
+"Plugins"
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+call plug#end()
 "meus comandos"
 set autoread
 set nocompatible
@@ -8,7 +16,7 @@ execute "set <M-j>=\ej"
 nnoremap <M-j> 
 inoremap <S-Tab> <C-d>
 
-set scrolloff=12 "Numero de Linhas acima e abaixo do scroll"
+set so = 12
 nnoremap j jzz
 nnoremap k kzz
 
