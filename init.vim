@@ -8,6 +8,10 @@ execute "set <M-j>=\ej"
 nnoremap <M-j> 
 inoremap <S-Tab> <C-d>
 
+set scrolloff=12 "Numero de Linhas acima e abaixo do scroll"
+nnoremap j jzz
+nnoremap k kzz
+
 inoremap <A-Up> <Esc>:m-2<CR>
 nnoremap <A-Down> :m+<CR>
 nnoremap <A-Up> :m-2<CR>
@@ -28,8 +32,20 @@ set smartcase
 set autoindent "identa automatico"
 set smartindent "faz a identação automatica quando clica no enter"
 
-nnoremap <c-z> :u<CR>      " Avoid using this**
-inoremap <c-z> <c-o>:u<CR>
+"Desabilita setinhas"
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+"Usa O Ctrl + Z achei meio inutil"
+
+"nnoremap <c-z> :u<CR>      " 
+"inoremap <c-z> <c-o>:u<CR>"
 
 autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e CPP para instalar sudo apt install clang-format" 
 
