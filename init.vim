@@ -1,19 +1,12 @@
-"sources"
-command! -nargs=1 Source runtime! conf.d/<args>
-Source plugins.vim
-
 "Plugins"
 call plug#begin('~/.vim/plugged')
-Plug 'bfrg/vim-cpp-modern'
+
 Plug 'junegunn/vim-easy-align'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'dense-analysis/ale'
-"Theme"
-Plug 'jnurmine/Zenburn'
-Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 "meus comandos"
-
 set autoread
 set nocompatible
 set showmatch
