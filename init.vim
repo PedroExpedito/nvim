@@ -1,11 +1,39 @@
 "Plugins"
 call plug#begin('~/.vim/plugged')
+Plug 'calviken/vim-gdscript3'
+Plug 'ervandew/supertab' 
+Plug 'calviken/vim-gdscript3'
+Plug 'christoomey/vim-system-copy' "precisa do xsel instalado
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'osyo-manga/vim-over'
 
-Plug 'junegunn/vim-easy-align'
+" Theme
+Plug 'jnurmine/Zenburn'
+Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Static check
+Plug 'dense-analysis/ale'
 
+" Completion
+Plug 'roxma/nvim-yarp'  " required by ncm2
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'  " Buffer word completionn
+Plug 'ncm2/ncm2-path'  " Path-completion
+Plug 'ncm2/ncm2-jedi'  " Python
+Plug 'ncm2/ncm2-pyclang'  " C and C++
+
+" Python
+Plug 'michaeljsmith/vim-indent-object'  " Handle intended blocks as text objects
+Plug 'alfredodeza/pytest.vim'  " Run pytest from vim.
 call plug#end()
+"Plugins COnfig"
+let g:cpp_member_variable_highlight = 1
+  
+let g:ale_gdscript3_godotheadless_executable = '/home/pedro/Documentos/Godot_v3.2.1-stable_mono_linux_server_64/Godot_v3.2.1-stable_mono_linux_server.64' 
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 "meus comandos"
 set autoread
 set nocompatible
@@ -16,7 +44,6 @@ execute "set <M-j>=\ej"
 nnoremap <M-j> 
 inoremap <S-Tab> <C-d>
 
-set so = 12
 nnoremap j jzz
 nnoremap k kzz
 
