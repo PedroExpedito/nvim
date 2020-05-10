@@ -1,23 +1,29 @@
 "Plugins"
 call plug#begin('~/.vim/plugged')
-Plug 'calviken/vim-gdscript3'
-Plug 'ervandew/supertab' 
-Plug 'calviken/vim-gdscript3'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-system-copy' "precisa do xsel instalado
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'osyo-manga/vim-over'
 
+"HTML
+Plug 'mattn/emmet-vim' "snips
 " Theme
+
 Plug 'jnurmine/Zenburn'
 Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 
 " Static check
-Plug 'dense-analysis/ale'
 
+Plug 'dense-analysis/ale'
+"Java Script
 " Completion
+
+
 Plug 'roxma/nvim-yarp'  " required by ncm2
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'  " Buffer word completionn
@@ -26,34 +32,42 @@ Plug 'ncm2/ncm2-jedi'  " Python
 Plug 'ncm2/ncm2-pyclang'  " C and C++
 
 " Python
+
 Plug 'michaeljsmith/vim-indent-object'  " Handle intended blocks as text objects
 Plug 'alfredodeza/pytest.vim'  " Run pytest from vim.
+
 call plug#end()
+"Java script
+
+"Airline"
+"
+let g:airline#extensions#tabline#enabled=1
 "Plugins COnfig"
+"
 let g:cpp_member_variable_highlight = 1
-  
-let g:ale_gdscript3_godotheadless_executable = '/home/pedro/Documentos/Godot_v3.2.1-stable_mono_linux_server_64/Godot_v3.2.1-stable_mono_linux_server.64' 
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:UltiSnipsExpandTrigger="<C-l>"
+
 "meus comandos"
 set autoread
+set title
 set nocompatible
 set showmatch
+
+set path=$PWD/**
+
+"Adiciona o Identação por Tab e shift TAB"
 nnoremap <S-Tab> <<
-nnoremap <Alt>: m. + 1 <CR> ==
-execute "set <M-j>=\ej"
-nnoremap <M-j> 
 inoremap <S-Tab> <C-d>
+"end"
+nnoremap <S-F> :NERDTreeToggle<CR>
+"Cursor Sempre no meio da tela"
 
 nnoremap j jzz
 nnoremap k kzz
 
-inoremap <A-Up> <Esc>:m-2<CR>
-nnoremap <A-Down> :m+<CR>
-nnoremap <A-Up> :m-2<CR>
-inoremap <A-Down> <Esc>:m+<CR>
-set number
-set mouse =a
-set nu "exibir linhas"
+"end"
+
+set number "exibir linhas"
 syntax on "deixa colorido as letras"
 set encoding=utf-8
 set showcmd
@@ -62,26 +76,44 @@ set expandtab
 set backspace=indent,eol,start
 set hlsearch
 set incsearch
-set ignorecase
-set smartcase 
+set ignorecase "ignorava maisculas na pesquisa
+set smartcase
 set autoindent "identa automatico"
 set smartindent "faz a identação automatica quando clica no enter"
 
-"Desabilita setinhas"
 
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
-"Usa O Ctrl + Z achei meio inutil"
+autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e CPP para instalar sudo apt install clang-format"
 
-"nnoremap <c-z> :u<CR>      " 
-"inoremap <c-z> <c-o>:u<CR>"
+colorscheme breezy
+if !(&term =~ 'linux')
+    set t_Co=256 " 256 color
+    colorscheme zenburn
+"    remove bg color (use default one, normally transparent for me)
+    hi Normal ctermfg=188 ctermbg=None
+    set cursorline " highlight current line
+    let g:airline_powerline_fonts=1 " use powerline arrows
+    let g:airline_theme='zenburn'   " nicer theme
+else
+    colorscheme desert
+endif
 
-autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e CPP para instalar sudo apt install clang-format" 
+"   clear whitespace before saving
+au BufWritePre * :%s/\s\+$//e
 
+"   highlight stuff after column 88
+
+match ErrorMsg '\%89v.\+'
+
+let g:python_host_prog = $HOME . '/.local/nvenv/nvim2/bin/python'
+let g:python3_host_prog = $HOME . '/.local/nvenv/nvim3/bin/python'
+
+   netrw (vim file manager) setup
+
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_liststyle = 3
+
+" disable mouse interactions "
+set mouse=
 
