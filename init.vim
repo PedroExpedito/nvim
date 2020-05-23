@@ -20,6 +20,10 @@ Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 " Static check
 
 Plug 'dense-analysis/ale'
+
+Plug 'ricpelo/vim-gdscript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "Java Script
 " Completion
 
@@ -53,7 +57,19 @@ set title
 set nocompatible
 set showmatch
 
-set path=$PWD/**
+set path=$PWD./**
+"JAVA"
+
+
+
+call ale#linter#Define('gd', {
+'name': 'godot',
+'lsp': 'tcp',
+'address': 'localhost:6008',
+'project_root': '/',
+})
+
+
 
 "Adiciona o Identação por Tab e shift TAB"
 nnoremap <S-Tab> <<
@@ -86,15 +102,15 @@ autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar cod
 
 colorscheme breezy
 if !(&term =~ 'linux')
-    set t_Co=256 " 256 color
-    colorscheme zenburn
-"    remove bg color (use default one, normally transparent for me)
-    hi Normal ctermfg=188 ctermbg=None
-    set cursorline " highlight current line
-    let g:airline_powerline_fonts=1 " use powerline arrows
-    let g:airline_theme='zenburn'   " nicer theme
+  set t_Co=256 " 256 color
+  colorscheme zenburn
+  "    remove bg color (use default one, normally transparent for me)
+  hi Normal ctermfg=188 ctermbg=None
+  set cursorline " highlight current line
+  let g:airline_powerline_fonts=1 " use powerline arrows
+  let g:airline_theme='zenburn'   " nicer theme
 else
-    colorscheme desert
+  colorscheme desert
 endif
 
 "   clear whitespace before saving
@@ -107,7 +123,7 @@ match ErrorMsg '\%89v.\+'
 let g:python_host_prog = $HOME . '/.local/nvenv/nvim2/bin/python'
 let g:python3_host_prog = $HOME . '/.local/nvenv/nvim3/bin/python'
 
-   netrw (vim file manager) setup
+netrw (vim file manager) setup
 
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
