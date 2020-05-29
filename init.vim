@@ -16,21 +16,15 @@ Plug 'jnurmine/Zenburn'
 Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 
 " Static check
+
 Plug 'dense-analysis/ale'
+
 "IDE C#"
 
-Plug 'OmniSharp/omnisharp-vim'
+"Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 "c#"
-let g:OmniSharp_highlight_types = 3
-let g:OmniSharp_server_stdio = 0
-let g:OmniSharp_server_use_mono = 1
-let g:OmniSharp_server_stdio = 1
-let g:ale_linters = {
-\ 'cs': ['OmniSharp']
-\}
-
 
 "Java script
 
@@ -54,10 +48,10 @@ set path=$PWD./**
 "Adiciona o Identação por Tab e shift TAB"
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
-"end"
+"Abrir o NERDTree"
 nnoremap <S-F> :NERDTreeToggle<CR>
-"Cursor Sempre no meio da tela"
 
+"Cursor Sempre no meio da tela"
 nnoremap j jzz
 nnoremap k kzz
 
@@ -76,6 +70,7 @@ set ignorecase "ignorava maisculas na pesquisa
 set smartcase
 set autoindent "identa automatico"
 set smartindent "faz a identação automatica quando clica no enter"
+set mouse= " disable mouse interactions "
 
 
 autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e CPP para instalar sudo apt install clang-format"
@@ -108,6 +103,4 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 
-" disable mouse interactions "
-set mouse=
 
