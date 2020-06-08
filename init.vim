@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 " Static check
 
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "IDE C#"
 
@@ -44,6 +45,9 @@ set showmatch
 
 set path=$PWD./**
 
+"ALE CONFIG
+let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['eslint']
 
 "Adiciona o Identação por Tab e shift TAB"
 nnoremap <S-Tab> <<
@@ -103,4 +107,6 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 
+"atalhos"
+nnoremap <C-D> :!node --inspect server.js
 
