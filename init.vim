@@ -23,7 +23,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "IDE C#"
 
 "Plug 'OmniSharp/omnisharp-vim'
-
+"Editor COnfig
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 "c#"
 
