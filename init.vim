@@ -14,6 +14,7 @@ Plug 'osyo-manga/vim-over'
 
 Plug 'jnurmine/Zenburn'
 Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
+Plug 'oblitum/rainbow' " Chaces e parenteses coloridos
 
 " Static check
 
@@ -29,6 +30,8 @@ call plug#end()
 "c#"
 
 "Java script
+"html
+Plug 'mattn/emmet-vim'
 
 "Airline"
 "
@@ -38,13 +41,32 @@ let g:airline#extensions#tabline#enabled=1
 let g:cpp_member_variable_highlight = 1
 let g:UltiSnipsExpandTrigger="<C-l>"
 
+"emmet
+let g:user_emmet_mode='n'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+" Rainbow
+au FileType c,cpp,objc,objcpp,js,html call rainbow#load()
+let g:rainbow_active = 1
+
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+
 "meus comandos"
 set autoread
 set title
 set nocompatible
 set showmatch
 
-set path=$PWD./**
+set path=$PWD
 
 "ALE CONFIG
 let g:ale_fixers = {}
@@ -78,7 +100,8 @@ set smartindent "faz a identação automatica quando clica no enter"
 set mouse= " disable mouse interactions "
 
 
-autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e CPP para instalar sudo apt install clang-format"
+autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e
+"CPP para instalar sudo apt install clang-format"
 
 if !(&term =~ 'linux')
   set t_Co=256 " 256 color
@@ -109,5 +132,5 @@ let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 
 "atalhos"
-nnoremap <C-D> :!node --inspect server.js
-
+"deixa a sintaxe mais bonita
+nnoremap <C-d> :ALEFix
