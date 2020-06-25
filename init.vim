@@ -11,12 +11,20 @@ Plug 'tpope/vim-repeat'
 Plug 'osyo-manga/vim-over'
 
 " Theme
-
+Plug 'ryanoasis/vim-devicons'
 Plug 'jnurmine/Zenburn'
 Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 Plug 'oblitum/rainbow' " Chaces e parenteses coloridos
-
+"quick run para executar pedaços de codigo
+Plug 'thinca/vim-quickrun'
 " Static check
+
+"Markdown view
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+
+Plug 'sidorares/node-vim-debugger'
+"Ale
+Plug 'puremourning/vimspector'
 
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -30,9 +38,12 @@ call plug#end()
 "c#"
 
 "Java script
+"CSS
+Plug 'ap/vim-css-color'
 "html
 Plug 'mattn/emmet-vim'
-
+"css
+set t_Co=256
 "Airline"
 "
 let g:airline#extensions#tabline#enabled=1
@@ -42,6 +53,7 @@ let g:cpp_member_variable_highlight = 1
 let g:UltiSnipsExpandTrigger="<C-l>"
 
 "emmet
+let g:user_emmet_mode='inv'
 let g:user_emmet_mode='n'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -58,6 +70,11 @@ let g:rainbow_load_separately = [
 
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+"Instante markdown
+"precisa instalar o servidor https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_port = 8888
 
 
 "meus comandos"
@@ -86,7 +103,7 @@ nnoremap k kzz
 
 set number "exibir linhas"
 syntax on "deixa colorido as letras"
-set encoding=utf-8
+ set encoding=UTF-8
 set showcmd
 set tabstop=2 shiftwidth=2
 set expandtab
