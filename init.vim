@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'alvan/vim-closetag'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-system-copy' "precisa do xsel instalado
@@ -39,7 +40,7 @@ call plug#end()
 
 "Java script
 "CSS
-Plug 'ap/vim-css-color'
+Plug 'gorodinskiy/vim-coloresque'
 "html
 Plug 'mattn/emmet-vim'
 "css
@@ -53,10 +54,11 @@ let g:cpp_member_variable_highlight = 1
 let g:UltiSnipsExpandTrigger="<C-l>"
 
 "emmet
-let g:user_emmet_mode='inv'
-let g:user_emmet_mode='n'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+let g:emmet_html5 = 0
+
+"Auto close tag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+
 " Rainbow
 au FileType c,cpp,objc,objcpp,js,html call rainbow#load()
 let g:rainbow_active = 1
