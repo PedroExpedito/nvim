@@ -12,6 +12,8 @@ Plug 'tpope/vim-repeat'
 Plug 'osyo-manga/vim-over'
 
 " Theme
+Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'lilydjwg/colorizer'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jnurmine/Zenburn'
 Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
@@ -19,6 +21,9 @@ Plug 'oblitum/rainbow' " Chaces e parenteses coloridos
 "quick run para executar pedaços de codigo
 Plug 'thinca/vim-quickrun'
 " Static check
+
+"css
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "Markdown view
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -30,6 +35,8 @@ Plug 'puremourning/vimspector'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+
+"Colorized output
 "IDE C#"
 
 "Plug 'OmniSharp/omnisharp-vim'
@@ -117,7 +124,6 @@ set smartcase
 set autoindent "identa automatico"
 set smartindent "faz a identação automatica quando clica no enter"
 set mouse= " disable mouse interactions "
-
 
 autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e
 "CPP para instalar sudo apt install clang-format"
