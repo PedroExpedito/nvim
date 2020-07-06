@@ -40,12 +40,14 @@ export PATH="$PATH:/home/pedro/Documentos/programas/flutter/bin"
 
 #Android
 
-export ANDROID_HOME=/home/$USER/Android/SDK
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=${PATH}:$ANDROID_HOME/cmdline-tools:$ANDROID_HOME/cmdline-tools/tools/bin/
+export ANDROID_HOME=/home/$USER/.android/SDK
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+#export PATH=${PATH}:$ANDROID_HOME/cmdline-tools:$ANDROID_HOME/cmdline-tools/tools/bin
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+
+
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export ANDROID_NDK_ROOT=/home/$USER/Android/Sdk/ndk-bundle
-export ANDROID_SDK=$ANDROID_HOME
 
 #Windows
 
