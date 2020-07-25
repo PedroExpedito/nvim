@@ -2,7 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 #Alias
-export RTSPPASSOWOD="6d61723f"
+#Alias do pronton
+export STEAM_COMPAT_DATA_PATH=$HOME/proton
+export PATH="$PATH:/home/pedro/.local/share/Steam/steamapps/common/Proton\ 5.0/"
 export LANG=en_US.utf8
 alias cpdir="pwd | xsel -b -i"
 #alias myphone="scrcpy -s 192.168.1.107:5555"
@@ -12,6 +14,7 @@ alias noesc="sed 's|\x1b\[[;0-9]*m||g'"
 alias desktop="Área de trabalho/"
 #Alias para deixar colorido o output
 alias ccat='pygmentize -g'
+rm = rm -f
 #Configuração do Bash
 
 
@@ -40,7 +43,7 @@ export PATH="$PATH:/home/pedro/Documentos/programas/flutter/bin"
 
 #Android
 
-export ANDROID_HOME=/home/$USER/.android/SDK
+export ANDROID_HOME=/home/$USER/.android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 #export PATH=${PATH}:$ANDROID_HOME/cmdline-tools:$ANDROID_HOME/cmdline-tools/tools/bin
@@ -109,7 +112,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-  PS1='${}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\]\$ '
+  PS1='\n${}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\]\\r\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -211,5 +214,6 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[32;40m\]\u\[\e[m\]\[\e[34m\]\w\[\e[m\]:\[\e[31;40m\]\`parse_git_branch\`\[\e[m\]\[\e[34;40m\]\\$\[\e[m\]: "
+export PS1="\[\e[32;40m\]\u\[\e[m\]\[\e[34m\]\w\[\e[m\]:\[\e[31;40m\]\`parse_git_branch\`\[\e[m\]\[\e[34;40m\]\\$\[\e[m\]:\n "
 #zenburnn
+setxkbmap -option shift:both_capslock
