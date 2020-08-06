@@ -1,5 +1,33 @@
 {
- "godot.enable": true,
- "godot.lsp_server_port": 6008,
- "java.enabled": true
+  "godot.enable": true,
+  "godot.lsp_server_port": 6008,
+  "java.enabled": true,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gdscript"],
+      "port": 6008
+    }
+  }
 }

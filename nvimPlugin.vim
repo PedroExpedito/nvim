@@ -34,6 +34,9 @@ Plug 'tomtom/tcomment_vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
+"godot
+Plug 'habamax/vim-godot'
+
 "JSX
 "Image
 Plug 'junegunn/fzf.vim'
