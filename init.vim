@@ -8,6 +8,9 @@ set title
 set nocompatible
 set showmatch
 set path=$PWD
+"Comando abaixo é para compartilhar o clipboard com o sistema operacional
+
+"set clipboard=unnamedplus
 
 "Cursor Sempre no meio da tela"
 nnoremap j jzz

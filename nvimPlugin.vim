@@ -5,7 +5,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 
+Plug 'yggdroot/indentline'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
 Plug 'christoomey/vim-system-copy' "precisa do xsel instalado
+
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -38,11 +43,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'habamax/vim-godot'
 
 "JSX
-"Image
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"LiveServer
-Plug 'turbio/bracey.vim'
+
 "HTML
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
@@ -63,11 +64,6 @@ call plug#end()
 let g:vim_jsx_pretty_template_tags = ['html', 'jsx', 'js']
 
 let g:fzf_preview_window = 'right:60%'
-
-"LiveServer
-let g:bracey_refresh_on_save = 1
-let g:bracey_server_port = 9090
-let g:bracey_eval_on_save = 1
 
 
 "Airline"
@@ -262,6 +258,8 @@ function! s:show_documentation()
 
 endfunction
 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|mp4|mkv|avi|swp|)$'
+
 
 " Show all diagnostics.
 
@@ -282,4 +280,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
+map cc :TComment<CR>
 let NERDTreeShowHidden=1
