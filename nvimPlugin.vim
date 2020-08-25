@@ -4,6 +4,9 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'lervag/vimtex'
+
+Plug 'xuhdev/vim-latex-live-preview'
 
 Plug 'yggdroot/indentline'
 
@@ -20,7 +23,6 @@ Plug 'osyo-manga/vim-over'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jnurmine/Zenburn'
 Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
-Plug 'oblitum/rainbow' " Chaces e parenteses coloridos
 
 "quick run para executar pedaços de codigo
 Plug 'thinca/vim-quickrun'
@@ -76,17 +78,6 @@ let g:emmet_html5 = 1
 "Auto close tag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
 
-" Rainbow
-
-au FileType c,cpp,objc,objcpp,js,html call rainbow#load()
-let g:rainbow_active = 1
-
-let g:rainbow_load_separately = [
-      \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-      \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
-      \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-      \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
-      \ ]
 
 "Instant markdown
 "precisa instalar o servidor https://github.com/suan/vim-instant-markdown
@@ -190,6 +181,7 @@ function! s:check_back_space() abort
 
 endfunction
 
+au BufRead,BufNewFile *.txt setlocal spell spelllang=pt
 
 
 " Use <c-space> to trigger completion.
@@ -282,3 +274,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 map cc :TComment<CR>
 let NERDTreeShowHidden=1
+let g:tex_flavor = 'latex'
+let g:livepreview_use_biber = 1
