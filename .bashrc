@@ -1,6 +1,9 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+
+#NEOVIM PATH
+VI="$HOME/.config/nvim/"
 #Alias
 #Alias do pronton
 export STEAM_COMPAT_DATA_PATH=$HOME/proton

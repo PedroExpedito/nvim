@@ -182,6 +182,7 @@ function! s:check_back_space() abort
 endfunction
 
 au BufRead,BufNewFile *.txt setlocal spell spelllang=pt
+au BufRead,BufNewFile *.md setlocal spell spelllang=pt
 
 
 " Use <c-space> to trigger completion.
