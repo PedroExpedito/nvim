@@ -221,6 +221,12 @@ function parse_git_dirty {
 
 export PS1="\[\e[32;40m\]\u\[\e[m\]\[\e[34m\]\w\[\e[m\]:\[\e[31;40m\]\`parse_git_branch\`\[\e[m\]\[\e[34;40m\]\\$\[\e[m\]:\n "
 #zenburnn
+
 setxkbmap -option shift:both_capslock
 export PATH="$PATH:/sbin"
 export SCONSFLAGS="-j4"
+
+# TMUX autostart
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
