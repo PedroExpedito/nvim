@@ -4,11 +4,6 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'lervag/vimtex'
-
-Plug 'xuhdev/vim-latex-live-preview'
-
-Plug 'yggdroot/indentline'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -70,6 +65,8 @@ let g:fzf_preview_window = 'right:60%'
 
 "Airline"
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_splits = 0
+let airline#extensions#tabline#show_buffers = 0
 
 
 "emmet
