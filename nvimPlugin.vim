@@ -5,6 +5,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 
+"TEX
+Plug 'lervag/vimtex'
+
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'christoomey/vim-system-copy' "precisa do xsel instalado

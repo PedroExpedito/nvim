@@ -4,13 +4,14 @@
 
 #NEOVIM PATH
 VI="$HOME/.config/nvim/"
-#Alias
 #Alias do pronton
 export STEAM_COMPAT_DATA_PATH=$HOME/proton
 export PATH="$PATH:/home/pedro/.local/share/Steam/steamapps/common/Proton\ 5.0/"
 export LANG=en_US.utf8
 alias cpdir="pwd | xsel -b -i"
+#Alias
 #alias myphone="scrcpy -s 192.168.1.107:5555"
+alias translate="trans -b"
 alias cfv="vi /home/pedro/.config/nvim/init.vim"
 alias noesc="sed 's|\x1b\[[;0-9]*m||g'"
 #alias camera= "ssh pedro@192.168.1.112"
