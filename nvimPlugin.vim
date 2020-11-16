@@ -5,6 +5,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 
+" Server para HTML
+Plug 'turbio/bracey.vim'
 "TEX
 Plug 'lervag/vimtex'
 
@@ -60,6 +62,27 @@ call plug#end()
 ""***********************************PLUGINS-CONFIG***********************************""
 ""************************************************************************************""
 
+"###############"
+"####Bracey#####"
+"###############"
+
+let g:bracey_auto_start_browser 0
+let g:bracey_server_port 3030
+let g:bracey_server_allow_remote_connections 1
+
+"#END_Bracey#"
+
+"TEX
+"Desabilita alguns warning
+
+let g:vimtex_quickfix_ignore_filters = [
+  \'Underfull \\hbox (badness [0-9]*) in paragraph at lines',
+  \'Overfull \\hbox ([0-9]*.[0-9]*pt too wide) in paragraph at lines',
+  \'Underfull \\hbox (badness [0-9]*) in ',
+  \'Overfull \\hbox ([0-9]*.[0-9]*pt too wide) in ',
+  \'Package hyperref Warning: Token not allowed in a PDF string',
+  \'Package typearea Warning: Bad type area settings!',
+  \]
 
 let g:vim_jsx_pretty_template_tags = ['html', 'jsx', 'js']
 
@@ -89,7 +112,6 @@ let g:instant_markdown_port = 8888
 
 let g:ale_fixers = {'typescript': ['tslint','eslint'], 'javascript': ['eslint']}
 
-
 autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e
 "CPP para instalar sudo apt install clang-format"
 
@@ -104,9 +126,12 @@ if !(&term =~ 'linux')
 else
   colorscheme desert
 endif
-au bufwritepre * :%s/\s\+$//e
-match errormsg '\%89v.\+'
 
+au bufwritepre * :%s/\s\+$//e
+"Pinta de outra cor as letras quando passa de 66 caracteres
+"Muito util para não cansar os olhos.
+
+match errormsg '\%66v.\+'
 
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
@@ -183,6 +208,7 @@ endfunction
 
 au BufRead,BufNewFile *.txt setlocal spell spelllang=pt
 au BufRead,BufNewFile *.md setlocal spell spelllang=pt
+au BufRead,BufNewFile *.tex setlocal spell spelllang=pt
 
 
 " Use <c-space> to trigger completion.

@@ -11,9 +11,10 @@ export LANG=en_US.utf8
 alias cpdir="pwd | xsel -b -i"
 #Alias
 #alias myphone="scrcpy -s 192.168.1.107:5555"
-alias translate="trans -b"
+alias translate="trans -b -e bing"
 alias cfv="vi /home/pedro/.config/nvim/init.vim"
 alias noesc="sed 's|\x1b\[[;0-9]*m||g'"
+alias ip="ip -c"
 #alias camera= "ssh pedro@192.168.1.112"
 alias desktop="Área de trabalho/"
 #Alias para deixar colorido o output
