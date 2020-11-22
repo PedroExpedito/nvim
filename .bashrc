@@ -2,12 +2,27 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+#man mais bonito
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
 #NEOVIM PATH
 VI="$HOME/.config/nvim/"
 #Alias do pronton
 export STEAM_COMPAT_DATA_PATH=$HOME/proton
 export PATH="$PATH:/home/pedro/.local/share/Steam/steamapps/common/Proton\ 5.0/"
-export LANG=en_US.utf8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+# ALIAS SSH
+alias sshWindows="ssh fulaninho@192.168.100.170"
+alias sshKali="ssh casimir@192.168.100.113"
+alias sshCam="ssh pedro@192.168.0.108"
+
+
 alias cpdir="pwd | xsel -b -i"
 #Alias
 #alias myphone="scrcpy -s 192.168.1.107:5555"
@@ -232,3 +247,4 @@ export SCONSFLAGS="-j4"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+export HISTTIMEFORMAT="%d/%m/%y %T "

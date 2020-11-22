@@ -5,8 +5,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 
-" Server para HTML
-Plug 'turbio/bracey.vim'
 "TEX
 Plug 'lervag/vimtex'
 
@@ -61,16 +59,6 @@ call plug#end()
 ""************************************************************************************""
 ""***********************************PLUGINS-CONFIG***********************************""
 ""************************************************************************************""
-
-"###############"
-"####Bracey#####"
-"###############"
-
-let g:bracey_auto_start_browser 0
-let g:bracey_server_port 3030
-let g:bracey_server_allow_remote_connections 1
-
-"#END_Bracey#"
 
 "TEX
 "Desabilita alguns warning
