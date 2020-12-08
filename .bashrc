@@ -19,8 +19,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # ALIAS SSH
 alias sshWindows="ssh fulaninho@192.168.100.170"
-alias sshKali="ssh casimir@192.168.100.113"
+alias sshKali="ssh casimir@192.168.100.182"
 alias sshCam="ssh pedro@192.168.0.108"
+alias live-server="live-server --browser=firefox --port=8081"
+
+#gdb
+alias gdb="gdb -q"
 
 
 alias cpdir="pwd | xsel -b -i"
@@ -34,7 +38,6 @@ alias ip="ip -c"
 alias desktop="Área de trabalho/"
 #Alias para deixar colorido o output
 alias ccat='pygmentize -g'
-rm = rm -f
 #Configuração do Bash
 
 

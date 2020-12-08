@@ -5,6 +5,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 
+"QML SYNTHAX
+Plug 'peterhoeg/vim-qml'
+
 "TEX
 Plug 'lervag/vimtex'
 
