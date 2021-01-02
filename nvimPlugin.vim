@@ -95,6 +95,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
 
 "Instant markdown
 "precisa instalar o servidor https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_open_to_the_world = 1
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_port = 8888
 
@@ -119,10 +120,10 @@ else
 endif
 
 au bufwritepre * :%s/\s\+$//e
-"Pinta de outra cor as letras quando passa de 66 caracteres
+"Pinta de outra cor as letras quando passa de 80 caracteres
 "Muito util para não cansar os olhos.
 
-match errormsg '\%66v.\+'
+match errormsg '\%80v.\+'
 
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
@@ -271,24 +272,6 @@ endfunction
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|mp4|mkv|avi|swp|)$'
 
 
-" Show all diagnostics.
-
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 "CTRLP.vim"
 set wildignore+=*/node_modules/*,*.so,*.swp,*.zip
 
@@ -296,3 +279,21 @@ map cc :TComment<CR>
 let NERDTreeShowHidden=1
 let g:tex_flavor = 'latex'
 let g:livepreview_use_biber = 1
+
+"Config do CoC
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
