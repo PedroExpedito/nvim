@@ -2,8 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Alias su -
 
-
+alias su="su -"
 #man mais bonito
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
@@ -45,9 +46,6 @@ alias desktop="Área de trabalho/"
 #Alias para deixar colorido o output
 alias ccat='pygmentize -g'
 #Configuração do Bash
-
-
-
 
 set -o vi #Seta o modo vim para o terminal
 bind 'set show-mode-in-prompt on' #mostra o modo que estou
@@ -130,5 +128,4 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[32;40m\]\u\[\e[m\]\[\e[34m\]\w\[\e[m\]:\[\e[31;40m\]\`parse_git_branch\`\[\e[m\]\[\e[34;40m\]\\$\[\e[m\]:\n "
-
+export PS1="\[\e[33m\]\h\[\e[m\]: \[\e[31m\]\u\[\e[m\] \w\\$\[\e[30m\]:\[\e[m\] \[\e[31m\]\`parse_git_branch\`\[\e[m\] \n"

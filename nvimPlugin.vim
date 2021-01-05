@@ -3,6 +3,8 @@
 ""************************************************************************************""
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'sgur/vim-editorconfig'
 Plug 'scrooloose/nerdtree'
 
 "QML SYNTHAX
