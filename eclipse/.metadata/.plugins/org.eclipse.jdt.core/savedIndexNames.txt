@@ -1,6 +1,0 @@
-INDEX VERSION 1.131+/media/ext4/baclup/Documentos/projetos/java-2021/.metadata/.plugins/org.eclipse.jdt.core
-435324614.index
-2995520389.index
-3189021885.index
-1931652002.index
-4238621379.index

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move package &apos;desafio.heranca&apos; to &apos;exercicios/src/oo.heranca&apos;&#x0A;- Original project: &apos;poo&apos;&#x0A;- Destination element: &apos;exercicios/src/oo.heranca&apos;&#x0A;- Original element: &apos;poo/src/desafio.heranca&apos;&#x0A;- Update references to refactored element" description="Move package" destination="=exercicios/src&lt;oo.heranca" element1="/src&lt;desafio.heranca" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1621982769956" version="1.0"/>
-</session>

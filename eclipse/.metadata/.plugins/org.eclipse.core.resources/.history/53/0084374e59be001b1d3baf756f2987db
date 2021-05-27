@@ -1,8 +1,0 @@
-package oo.polimorfismo;
-
-public class Pessoa {
-	private double peso;
-	public void comer() {
-	}
-
-}
