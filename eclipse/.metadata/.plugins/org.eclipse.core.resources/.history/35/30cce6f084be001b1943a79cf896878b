@@ -1,0 +1,42 @@
+package oo.heranca.desafio;
+
+public class Ferrari extends Carro implements Esportivo, Luxo {
+	
+	private boolean ligarAr;
+	private boolean ligarTurbo;
+
+	
+	public Ferrari() {
+		super(300);
+	}
+	@Override // anotation
+	public void acelerar() {
+		setAceleracao(15);
+		super.acelerar();
+	}
+
+	@Override
+	public void ligarTurbo() {
+		ligarTurbo = true;
+		
+	}
+	@Override
+	public void desligarTurbo() {
+		ligarTurbo = false;
+	}
+	@Override
+	public void ligarAr() {
+		ligarAr = true;
+		
+	}
+	@Override
+	public void desligarAr() {
+		ligarAr = false;
+	}
+	
+	@Override
+	public double getAceleracao() {
+		return 15;
+	}
+
+}

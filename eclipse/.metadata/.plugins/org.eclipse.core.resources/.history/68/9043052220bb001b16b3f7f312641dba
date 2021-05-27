@@ -1,0 +1,13 @@
+package oo.heranca;
+
+public class Jogador {
+	int x;
+	int y;
+	
+	boolean andar(String direcao) {
+		if("baixo".equals(direcao)){
+		}
+		return true;
+	}
+
+}

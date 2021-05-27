@@ -1,0 +1,17 @@
+package equals;
+
+import arrayAndCollections.User;
+
+public class Main {
+	public static void main(String[] args) {
+		User user = new User("Pedro", "pedro@gmail.com");
+		User user2 = new User("Pedro", "pedro@gmail.com");
+		
+		// compara valor de memoria
+		System.out.println(user == user2);
+		// compara valor de memoria caso não seja implementado
+
+		System.out.println(user.equals(user2));
+	}
+
+}

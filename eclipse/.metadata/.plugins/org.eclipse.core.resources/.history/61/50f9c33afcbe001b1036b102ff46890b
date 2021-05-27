@@ -1,0 +1,11 @@
+package lambdas;
+
+// só pode ter um metodo por interface.. PAIA 
+@FunctionalInterface
+public interface Calculo {
+	
+	double executar(double a, double b);
+	default double PI() {
+		return 3.14;
+	}
+}

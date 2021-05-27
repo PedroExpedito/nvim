@@ -1,0 +1,12 @@
+package desafios.oo.composicao;
+
+public class Cliente {
+	String nome;
+	List<Compra> lista = new List<Compra>;
+	
+double valorTotal() {
+	return 0;
+}
+
+
+}

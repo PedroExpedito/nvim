@@ -1,0 +1,32 @@
+package oo.heranca;
+
+public class Jogador {
+	int x;
+	int y;
+	
+	boolean andar(Direcao direcao) {
+		switch (direcao) {
+		case NORTE: {
+			y--;
+			break;
+		}
+		case LESTE: {
+			x++;
+			break;
+		}
+		case SUL: {
+			y++;
+		}
+		case OESTE: {
+			x--;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + key);
+		}
+		if(direcao == Direcao.NORTE){
+			y--;
+		}
+		return true;
+	}
+
+}

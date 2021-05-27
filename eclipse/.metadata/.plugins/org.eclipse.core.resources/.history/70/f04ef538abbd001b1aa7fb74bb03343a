@@ -1,0 +1,8 @@
+package desafio.heranca.copy;
+
+public class Fusca extends Carro {
+	Fusca() {
+		super(100);
+	}
+
+}

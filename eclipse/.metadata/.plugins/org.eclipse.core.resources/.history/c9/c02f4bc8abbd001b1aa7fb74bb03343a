@@ -1,0 +1,20 @@
+package desafio.heranca;
+
+import desafio.heranca.Carro;
+import desafio.heranca.Ferrari;
+import desafio.heranca.Fusca;
+
+public class Main {
+	public static void main(String[] args) {
+		Carro ferrari = new Ferrari();
+		Carro fusca = new Fusca();
+		
+		ferrari.acelerar();
+		fusca.acelerar();
+		
+		System.out.println("Ferrari " + ferrari.velocidadeAtual);
+		System.out.println("Fusca " + fusca.velocidadeAtual);
+		
+	}
+
+}

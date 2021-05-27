@@ -1,0 +1,16 @@
+package desafio.heranca;
+
+import oo.heranca.desafio.Carro;
+
+public class Ferrari extends Carro{
+	
+	public Ferrari() {
+		super(300);
+	}
+	@Override // anotation
+	public void acelerar() {
+		this.aceleracao = 15;
+		super.acelerar();
+	}
+
+}

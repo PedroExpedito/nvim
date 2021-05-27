@@ -1,0 +1,14 @@
+package desafio.heranca.copy;
+
+public class Ferrari extends Carro{
+	
+	Ferrari() {
+		super(300);
+	}
+	@Override // anotation
+	void acelerar() {
+		this.aceleracao = 15;
+		super.acelerar();
+	}
+
+}

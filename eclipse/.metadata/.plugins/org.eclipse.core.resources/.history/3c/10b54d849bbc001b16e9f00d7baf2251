@@ -1,0 +1,29 @@
+package desafios.oo.composicao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cliente {
+	String nome;
+	List<Compra> lista = new ArrayList<Compra>();
+	
+	
+Cliente(String nome) {
+	this.nome = nome;
+}
+
+double valorTotal() {
+	double total = 0;
+	
+	for(Compra compra: lista) {
+		for(Item item: compra.lista) {
+			total += item.produto.preco * item.quantidade;
+		}
+	}
+	
+	return total;
+
+}
+
+
+}

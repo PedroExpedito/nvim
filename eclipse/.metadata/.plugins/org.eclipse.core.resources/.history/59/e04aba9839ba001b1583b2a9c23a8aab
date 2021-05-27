@@ -1,0 +1,14 @@
+package desafios.oo.composicao;
+
+import java.util.List;
+
+public class Cliente {
+	String nome;
+	List<Compra> lista = new ArrayList<Compra>();
+	
+double valorTotal() {
+	return 0;
+}
+
+
+}

@@ -1,0 +1,11 @@
+package oo.composicao;
+
+import java.util.ArrayList;
+
+public class Compra {
+	String cliente; // em uma sistema real o cliente não seria uma string
+	ArrayList<Item> itens = new ArrayList<Item>();
+	
+	c1.itens.add(new Item("Caneta", 20, 7.45));
+
+}

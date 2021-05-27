@@ -1,0 +1,10 @@
+package desafio.heranca;
+
+import oo.heranca.desafio.Carro;
+
+public class Fusca extends Carro {
+	public Fusca() {
+		super(100);
+	}
+
+}

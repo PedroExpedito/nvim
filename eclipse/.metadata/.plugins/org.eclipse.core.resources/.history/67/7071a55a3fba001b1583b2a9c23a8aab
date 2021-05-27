@@ -1,0 +1,18 @@
+package desafios.oo.composicao;
+
+public class Main {
+	public static void main(String[] args) {
+		Cliente cliente1 = new Cliente();
+		
+		Compra compra1 = new Compra();
+		
+		Produto produto1 = new Produto("Laranja", 2.50);
+		Item item1 = new Item(2, produto1);
+		
+		
+		item1.quantidade = 2;
+		item1.produto = produto1;
+		
+	}
+
+}

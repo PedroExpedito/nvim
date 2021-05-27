@@ -1,0 +1,6 @@
+package oo.composicao;
+
+public class Compra {
+	ArrayList<Item> lista = new ArrayList<Item>();
+
+}

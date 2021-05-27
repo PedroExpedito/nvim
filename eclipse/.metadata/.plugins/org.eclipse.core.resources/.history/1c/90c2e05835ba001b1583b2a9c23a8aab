@@ -1,0 +1,10 @@
+package oo.composicao.MuitosParaMuitos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Curso {
+	String nome;
+	List<Aluno> cursos = new ArrayList<Aluno>();
+
+}

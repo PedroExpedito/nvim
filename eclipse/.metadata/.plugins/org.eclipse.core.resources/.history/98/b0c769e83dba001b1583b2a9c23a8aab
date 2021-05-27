@@ -1,0 +1,8 @@
+package desafios.oo.composicao;
+
+public class Item {
+	int quantidade;
+	Produto produto;
+	
+
+}

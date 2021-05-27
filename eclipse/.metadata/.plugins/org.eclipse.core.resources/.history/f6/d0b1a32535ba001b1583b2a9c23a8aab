@@ -1,0 +1,7 @@
+package oo.composicao.MuitosParaMuitos;
+
+public class Aluno {
+	String nome;
+	List<Curso> cursos = new ArrayList<>();
+
+}

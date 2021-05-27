@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="poo.AreaCircle"/>
+    <fullyQualifiedTypeName name="poo.Product2"/>
+    <fullyQualifiedTypeName name="arrayAndCollections.ForEach"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="oo.heranca.Direcao"/>
+    <fullyQualifiedTypeName name="oo.encapsulamento.casaA.Ana"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+    <fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
+</qualifiedTypeNameHistroy>

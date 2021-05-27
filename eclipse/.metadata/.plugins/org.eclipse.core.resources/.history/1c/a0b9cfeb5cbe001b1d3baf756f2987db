@@ -1,0 +1,11 @@
+package oo.heranca.desafio;
+
+// a diferença da classe e interface?
+// uma interface vai ter metodos porém não vai ter corpo, só 
+// aponta a necessidade de implementar algo, semelhante aos headers em C
+
+public interface Esportivo {
+	void ligarTurbo();
+	void desligarTurbo();
+
+}
