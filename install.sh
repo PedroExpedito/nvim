@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TASKS=3
+TASKS=4
 COMPLETE_TASKS=0
 
 # HAHA fazer uma função depois.
@@ -15,6 +15,10 @@ ln -s `pwd`/bash/.bashrc $HOME/ &&\
 
 ln -s `pwd`/tmux/.tmux.conf $HOME/ &&\
   echo "SUCESSO: Link para TMUX" && \
+  COMPLETE_TASKS=$((COMPLETE_TASKS+1))
+
+ln -s `pwd`/gdb/.gdbinit $HOME/ &&\
+  echo "SUCESSO: Link para GDB" && \
   COMPLETE_TASKS=$((COMPLETE_TASKS+1))
 
 

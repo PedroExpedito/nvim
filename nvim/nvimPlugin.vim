@@ -4,6 +4,8 @@
 
 call plug#begin('~/.vim/plugged')
 
+"Cmake
+Plug 'cdelledonne/vim-cmake'
 "crl + w, m for zoom
 Plug 'dhruvasagar/vim-zoom'
 
@@ -16,9 +18,9 @@ Plug 'scrooloose/nerdtree'
 "Plug 'peterhoeg/vim-qml'
 
 "TEX
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'christoomey/vim-system-copy' "precisa do xsel instalado
 
@@ -74,8 +76,6 @@ Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
-"COC
-let g:coc_global_extensions=[ 'coc-omnisharp']
 
 
 ""************************************************************************************""
@@ -163,10 +163,6 @@ set expandtab
 
 set shiftwidth=2
 
-"deixa a sintaxe mais bonita
-nnoremap <c-d> :ALEFix
-
-
 " give more space for displaying messages.
 
 set cmdheight=2
@@ -221,102 +217,7 @@ function! s:check_back_space() abort
 
 endfunction
 
-au BufRead,BufNewFile *.txt setlocal spell spelllang=pt
-au BufRead,BufNewFile *.md setlocal spell spelllang=pt
-au BufRead,BufNewFile *.tex setlocal spell spelllang=pt
 
-
-" Use <c-space> to trigger completion.
-
-inoremap <silent><expr> <c-space> coc#refresh()
-
-
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-
-" position. Coc only does snippet and additional edit on confirm.
-
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-
-if exists('*complete_info')
-
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-else
-
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-endif
-
-
-
-" Use `[g` and `]g` to navigate diagnostics
-
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-
-
-" GoTo code navigation.
-
-nmap <silent> gd <Plug>(coc-definition)
-
-nmap <silent> gy <Plug>(coc-type-definition)
-
-nmap <silent> gi <Plug>(coc-implementation)
-
-nmap <silent> gr <Plug>(coc-references)
-
-
-
-" Use K to show documentation in preview window.
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-
-
-function! s:show_documentation()
-
-  if (index(['vim','help'], &filetype) >= 0)
-
-    execute 'h '.expand('<cword>')
-
-  else
-
-    call CocAction('doHover')
-
-  endif
-
-endfunction
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|mp4|mkv|avi|swp|)$'
-
-
-"CTRLP.vim"
-set wildignore+=*/node_modules/*,*.so,*.swp,*.zip
-
-map cc :TComment<CR>
-let NERDTreeShowHidden=1
-let g:tex_flavor = 'latex'
-let g:livepreview_use_biber = 1
-
-"Config do CoC
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+"COC
+"let g:coc_global_extensions=[ 'coc-omnisharp']
+"source ~/.config/nvim/coc-example.vim

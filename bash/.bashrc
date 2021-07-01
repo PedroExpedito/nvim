@@ -2,6 +2,16 @@
 
 ############################: ALIAS :##########################################
 
+# print screen
+
+
+#live server
+
+alias live-server="live-server --browser=chromium --port=8081"
+
+# irssi
+
+alias irssi="torsocks irssi"
 # su
 
 alias su="su -"
@@ -9,10 +19,12 @@ alias su="su -"
 # ssh
 
 alias sshWindows="ssh fulaninho@192.168.100.170"
+
 alias sshKali="ssh casimir@192.168.100.182"
 alias sshCam="ssh pedro@192.168.0.108"
 alias sshCamFs="sshfs pedro@192.168.0.108:/home/pedro/record/ /home/casimir/sshCam/"
-alias live-server="live-server --browser=firefox --port=8081"
+alias sshSmartPhone="ssh root@192.168.0.112"
+
 
 # ls
 alias ls="ls --color"
@@ -114,3 +126,4 @@ export DOT="/home/casimir/Documents/projetos/dotnet-core2021"
 export PATH=/home/casimir/.nvm/versions/node/v14.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/casimir/.dotnet/tools:/home/casimir/.local/bin:/home/casimir/.local/tex-live/bin/x86_64-linux:/home/casimir/.local/2020/bin/x86_64-linux:/home/casimir/.android/Sdk/tools:/home/casimir/.android/Sdk/platform-tools:~/Documents/Programs/jdk-15.0.2/bin/:/usr/local/go/bin
 export PATH=/home/casimir/.nvm/versions/node/v14.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/casimir/.dotnet/tools:/home/casimir/.local/bin:/home/casimir/.local/tex-live/bin/x86_64-linux:/home/casimir/.local/2020/bin/x86_64-linux:/home/casimir/.android/Sdk/tools:/home/casimir/.android/Sdk/platform-tools:~/Documents/Programs/jdk-15.0.2/bin/:/usr/local/go/bin
 export PATH=/home/casimir/.nvm/versions/node/v14.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/casimir/.dotnet/tools:/home/casimir/.local/bin:/home/casimir/.local/tex-live/bin/x86_64-linux:/home/casimir/.local/2020/bin/x86_64-linux:/home/casimir/.android/Sdk/tools:/home/casimir/.android/Sdk/platform-tools:~/Documents/Programs/jdk-15.0.2/bin/:/usr/local/go/bin
+. "$HOME/.cargo/env"

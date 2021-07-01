@@ -42,6 +42,10 @@ inoremap <S-Tab> <C-d>
 
 " setl tw=64
 
+au BufRead,BufNewFile *.txt setlocal spell spelllang=pt
+au BufRead,BufNewFile *.md setlocal spell spelllang=pt
+au BufRead,BufNewFile *.tex setlocal spell spelllang=pt
+
 ""************************************************************************************""
 ""***************************************CALL-PLUGINS*********************************""
 ""************************************************************************************""
