@@ -41,4 +41,4 @@ au BufRead,BufNewFile *.md setlocal spell spelllang=pt
 au BufRead,BufNewFile *.tex setlocal spell spelllang=pt
 
 ""CALL-PLUGINS""
-source ~/.config/nvim/nvimPlugin.vim
+source ~/.config/nvim/nvim-plugin.vim
