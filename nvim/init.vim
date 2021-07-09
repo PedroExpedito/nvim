@@ -2,7 +2,6 @@
 ""***************************************VANILLA**************************************""
 ""************************************************************************************""
 
-
 set t_Co=256
 set autoread
 set title
@@ -36,21 +35,10 @@ set mouse= " disable mouse interactions "
 "Adiciona o Identação por Tab e shift TAB"
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
-"Seta o maximo de carateres de cada linha usando gq
-"O perfeito seria 66 mais as vezes não fica e com 64
-"ele força melhor.
-
-" setl tw=64
 
 au BufRead,BufNewFile *.txt setlocal spell spelllang=pt
 au BufRead,BufNewFile *.md setlocal spell spelllang=pt
 au BufRead,BufNewFile *.tex setlocal spell spelllang=pt
 
-""************************************************************************************""
-""***************************************CALL-PLUGINS*********************************""
-""************************************************************************************""
-
+""CALL-PLUGINS""
 source ~/.config/nvim/nvimPlugin.vim
-
-""************************************************************************************""
-

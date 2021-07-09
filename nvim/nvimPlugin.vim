@@ -4,14 +4,18 @@
 
 call plug#begin('~/.vim/plugged')
 
-"Cmake
-Plug 'cdelledonne/vim-cmake'
+"LSP nativo com lua
+Plug 'hrsh7th/nvim-compe'
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+
 "crl + w, m for zoom
 Plug 'dhruvasagar/vim-zoom'
 
 "Debugger
 Plug 'puremourning/vimspector'
 
+"NERDTree
 Plug 'scrooloose/nerdtree'
 
 "QML SYNTHAX
@@ -24,6 +28,7 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'christoomey/vim-system-copy' "precisa do xsel instalado
 
+"Visual
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -43,51 +48,27 @@ Plug 'vim-airline/vim-airline-themes' " Contains zenburn for airline
 "Markdown view
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
-"Ale
-"Plug 'dense-analysis/ale'
-
-
 "comment
 Plug 'tomtom/tcomment_vim'
 
+"Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-"godot
-"Plug 'habamax/vim-godot'
-
-"Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-"JSX
-
-"HTML
-Plug 'alvan/vim-closetag'
-Plug 'mattn/emmet-vim'
-
-"CSS
-"Plug 'lilydjwg/colorizer'
-"Plug 'yuezk/vim-js'
-"Plug 'maxmellon/vim-jsx-pretty'
-
-
-"Plug 'dense-analysis/ale'
-
-Plug 'OmniSharp/omnisharp-vim'
+"Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
-
 
 
 ""************************************************************************************""
 ""***********************************PLUGINS-CONFIG***********************************""
 ""************************************************************************************""
 
-"let g:vimspector_enable_mappings = 'HUMAN'
+"vimspector
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 "TEX
 "Desabilita alguns warning
 
-let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_viewer = 'mupdf'
 
 let g:vimtex_quickfix_ignore_filters = [
   \'Underfull \\hbox (badness [0-9]*) in paragraph at lines',
@@ -115,20 +96,11 @@ let g:emmet_html5 = 1
 "Auto close tag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
 
-
 "Instant markdown
 "precisa instalar o servidor https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_open_to_the_world = 1
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_port = 8888
-
-"ALE CONFIG
-" This sets the option once.
-
-let g:ale_fixers = {'typescript': ['tslint','eslint'], 'javascript': ['eslint']}
-
-autocmd FileType c,cpp setlocal equalprg=clang-format "Programa para Identar codigo C e
-"CPP para instalar sudo apt install clang-format"
 
 if !(&term =~ 'linux')
   set t_Co=256 " 256 color
@@ -142,63 +114,11 @@ else
   colorscheme desert
 endif
 
-au bufwritepre * :%s/\s\+$//e
+"au bufwritepre * :%s/\s\+$//e
 "Pinta de outra cor as letras quando passa de 80 caracteres
 "Muito util para não cansar os olhos.
 
 match errormsg '\%80v.\+'
-
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_liststyle = 3
-
-setlocal autoindent
-
-setlocal cindent
-
-setlocal smartindent
-
-set expandtab
-
-set shiftwidth=2
-
-" give more space for displaying messages.
-
-set cmdheight=2
-
-
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-
-" delays and poor user experience.
-
-set updatetime=300
-
-
-
-" Don't pass messages to |ins-completion-menu|.
-
-set shortmess+=c
-
-
-
-" Always show the signcolumn, otherwise it would shift the text each time
-
-" diagnostics appear/become resolved.
-
-if has("patch-8.1.1564")
-
-  " Recently vim can merge signcolumn and number column into one
-
-  set signcolumn=number
-
-else
-
-  set signcolumn=yes
-
-endif
-
 
 ""************************************************************************************""
 ""***********************************ATALHOS-PLUGINS**********************************""
@@ -209,15 +129,69 @@ let g:NERDTreeWinSize=40
 let g:Tlist_WinWidth=40
 nnoremap <S-F> :NERDTreeToggle<CR>
 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"LSP nativo
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+EOF
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+lua << EOF
+-- Compe setup
+require'compe'.setup {
+ enabled = true;
+ autocomplete = true;
+ debug = false;
+ min_length = 1;
+ preselect = 'enable';
+ throttle_time = 80;
+ source_timeout = 200;
+ incomplete_delay = 400;
+ max_abbr_width = 100;
+ max_kind_width = 100;
+ max_menu_width = 100;
+ documentation = true;
 
-endfunction
+ source = {
+   path = true;
+   nvim_lsp = true;
+ };
+}
 
+local t = function(str)
+ return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
-"COC
-"let g:coc_global_extensions=[ 'coc-omnisharp']
-"source ~/.config/nvim/coc-example.vim
+local check_back_space = function()
+   local col = vim.fn.col('.') - 1
+   if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+       return true
+   else
+       return false
+   end
+end
+
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet's placeholder
+_G.tab_complete = function()
+ if vim.fn.pumvisible() == 1 then
+   return t "<C-n>"
+ elseif check_back_space() then
+   return t "<Tab>"
+ else
+   return vim.fn['compe#complete']()
+ end
+end
+_G.s_tab_complete = function()
+ if vim.fn.pumvisible() == 1 then
+   return t "<C-p>"
+ else
+   return t "<S-Tab>"
+ end
+end
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+EOF
